@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="glass-panel">
+            <div class="header">
+                <h1>🔗 Shortify</h1>
+                <p>Paste your long URL below to get a neat short link.</p>
+            </div>
+            
+            <form id="shorten-form">
+                <div class="input-group">
+                    <input type="url" id="url-input" placeholder="https://example.com/very/long/url" required>
+                    <button type="submit" id="submit-btn">
+                        <span>Shorten</span>
+                        <i data-feather="arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+
+            <div id="result-container" class="hidden">
+                <p class="result-label">Your shortened URL:</p>
+                <div class="result-box">
+                    <a id="short-url" href="#" target="_blank"></a>
+                    <button id="copy-btn" title="Copy to clipboard">
+                        <i data-feather="copy"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="error-container" class="hidden">
+                <p id="error-message"></p>
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
